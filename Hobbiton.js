@@ -14,7 +14,7 @@ const cliente = new Client({
 const comandos = new Map();
 
 const rutaComandos = path.join(__dirname, 'src', 'carpetaComandos');
-const archivosComandos = fs.readdirSync(rutaComandos).filter(archivo => archivo.endsWith(.js));
+const archivosComandos = fs.readdirSync(rutaComandos).filter(archivo => archivo.endsWith('.js'));
 
 for (const archivo of archivosComandos) {
     const rutaArchivo = path.join(rutaComandos, archivo);
