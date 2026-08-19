@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node Hobbiton.js"
+    "start": "node Hobbiton.js",
+    "registrar": "node src/registrarComandos.js"
   },
   "dependencies": {
     "discord.js": "^14.27.0",
