@@ -24,10 +24,10 @@ for (const archivo of archivosComandos) {
 }
 
 cliente.once('ready', () => {
-    console.log(`Listo conectau como ${client.user.tag}`);
+    console.log(`Listo conectau como ${cliente.user.tag}`);
 });
 
-cliente.on('interactionCreate'), async interaction => {
+cliente.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
 
     const comando = comandos.get(interaction.commandName);
@@ -51,6 +51,6 @@ cliente.on('interactionCreate'), async interaction => {
             });
         }
     }
-};
+});
 
 cliente.login(process.env.DISCORD_TOKEN);
