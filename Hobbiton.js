@@ -23,9 +23,20 @@ for (const archivo of archivosComandos) {
     comandos.set(comando.data.name, comando);
 }
 
-cliente.once('ready', () => {
-    console.log(`Listo conectau como ${cliente.user.tag}`);
-});
+const rutaEventos = path.join(__dirname, 'src', 'events');
+const archivosEventos = fs.readdirSync(rutaEventos).filter(archivo => archivo.endsWith('.js'));
+
+for(const archivo of archivosEventos)
+    {
+        const rutaArchivo = path.join(rutaEventos, Archivo);
+        const evento = require(rutaArchivo);
+
+        if (evento.unaVez) {
+            cliente.once(evento.nombre, ( . . .argumentos) => evento.ejecutar( . . .argumentos));
+        } else {
+            cliente.on(evento.nombre, ( . . .argumentos) => evento.ejecutar( . . .argumentos));
+        }
+    }
 
 cliente.on('interactionCreate', async interaction => {
     if (!interaction.isChatInputCommand()) return;
